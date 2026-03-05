@@ -1,0 +1,1858 @@
+[
+  {
+    "id": "TC001",
+    "title": "Member dashboard shows upcoming sessions with countdown details",
+    "description": "Verifies that a logged-in member can see upcoming sessions and countdown information on the dashboard.",
+    "category": "Member Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Upcoming Sessions\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a countdown timer is visible for the next session"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify next session countdown details (such as time remaining or session time) are visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Member dashboard shows training program progress percentage",
+    "description": "Verifies that the dashboard displays the member’s training program progress as a percentage.",
+    "category": "Member Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Program Progress\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a progress percentage value is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a progress indicator (such as a progress bar or circular progress) is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Member dashboard shows recent weight entries",
+    "description": "Verifies that the dashboard displays a recent weight summary/entries section.",
+    "category": "Member Dashboard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Weight\" or \"Weight Tracking\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a recent weight entry value is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a recent weight entry date is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Quick action navigates from dashboard to Booking page",
+    "description": "Verifies that the dashboard quick action takes the member to the booking page.",
+    "category": "Member Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Book Session\" or \"Go to Booking\" quick action button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/booking\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Available\" or \"Available Slots\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Quick action navigates from dashboard to Programs page and shows program overview",
+    "description": "Verifies that navigation to Programs works and the program overview shows key metadata like title and creation date.",
+    "category": "Member Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"View Program\" or \"Programs\" quick action button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/programs\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a program title is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a program creation date is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Dashboard shows a loading indicator before content renders",
+    "description": "Verifies that a loading state is shown while dashboard data is being fetched and then content appears.",
+    "category": "Member Dashboard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a loading indicator (such as \"Loading\" text or a spinner) is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Upcoming Sessions\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Program Progress\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Book a session with optional notes and see it in Upcoming Sessions",
+    "description": "Verifies a member can book an available slot with notes, gets a success message, and the booking appears in the upcoming sessions list.",
+    "category": "Book Training Sessions",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/booking\""
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Book a session without notes (confirm only)",
+    "description": "Verifies a member can book an available slot without adding notes and sees a success message.",
+    "category": "Book Training Sessions",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Book Session\" button on an available time slot"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Confirm\" button in the booking dialog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Success\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Booking list shows upcoming sessions section and is visible on Booking page",
+    "description": "Verifies the Booking page displays the upcoming booked sessions section/list for the member.",
+    "category": "Book Training Sessions",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Upcoming\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Upcoming sessions list\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Available slots are grouped by date on Booking page",
+    "description": "Verifies the Booking page shows available time slots organized into date groupings.",
+    "category": "Book Training Sessions",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Available\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Date group heading\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Cancel booking from confirmation dialog does not create a booking",
+    "description": "Verifies canceling the confirmation dialog does not show a success message and does not add a new upcoming session entry.",
+    "category": "Book Training Sessions",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Book Session\" button on an available time slot"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cancel\" button in the booking dialog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Success\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Optional notes field accepts text and is shown in the confirmation dialog",
+    "description": "Verifies the member can enter optional notes and the dialog reflects the notes before confirming.",
+    "category": "Book Training Sessions",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Book Session\" button on an available time slot"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Please focus on form checks\" into the notes field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Please focus on form checks\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Successful booking appears in Upcoming Sessions list on the Booking page",
+    "description": "Verifies that after a successful booking, the upcoming sessions list updates to include the newly booked session.",
+    "category": "Book Training Sessions",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Booking\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Book Session\" button on an available time slot"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Confirm\" button in the booking dialog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Newly booked session entry\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "View program overview and navigate all program tabs",
+    "description": "Verifies a logged-in member can open Training Programs, see program header details, and view content across Daily Tasks, Weekly Plan, and Nutrition tabs.",
+    "category": "View Training Programs",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/programs\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Training Program\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Switch to Daily Tasks tab and toggle a task completion state",
+    "description": "Verifies a member can switch to Daily Tasks and toggle a task checkbox to mark it complete or incomplete.",
+    "category": "View Training Programs",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Daily Tasks\" tab"
+      },
+      {
+        "type": "action",
+        "description": "Click the first visible daily task completion checkbox"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Daily task toggle updates visible progress percentage",
+    "description": "Verifies that toggling a daily task results in an updated visible program progress percentage.",
+    "category": "View Training Programs",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Daily Tasks\" tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"%\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the first visible daily task completion checkbox"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "View Weekly Plan tab shows exercises organized by day",
+    "description": "Verifies a member can open the Weekly Plan tab and see the plan grouped by day with exercise items visible.",
+    "category": "View Training Programs",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Weekly Plan\" tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Monday\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Tuesday\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Review Nutrition tab guidelines and recommendations",
+    "description": "Verifies a member can open the Nutrition tab and see nutrition guidance content.",
+    "category": "View Training Programs",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Nutrition\" tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Nutrition\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Recommendations\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Initial load shows a loading indicator then program content",
+    "description": "Verifies the Training Programs page displays a loading state before rendering program content.",
+    "category": "View Training Programs",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Loading\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Daily Tasks\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Switch tabs preserves page stability and shows expected tab-specific content",
+    "description": "Verifies switching between tabs does not break the view and each tab shows distinct visible content.",
+    "category": "View Training Programs",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Login\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Programs\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Weekly Plan\" tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Monday\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Nutrition\" tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Recommendations\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "View weight tracking overview metrics and visualizations",
+    "description": "Verifies that the Weight Tracking page shows current weight, last update, trend, total change, the chart, and the entries table.",
+    "category": "Weight Tracking",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/weight-tracking\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Current Weight\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Weight trend (gain/loss)\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Add a new weight entry with notes and see it reflected in chart and table",
+    "description": "Verifies adding a weight entry with a selected date, numeric kg value, and notes shows a success message and updates visible data.",
+    "category": "Weight Tracking",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Add Weight\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Select a date using the date picker"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Complete add-weight submission with notes and confirm success message",
+    "description": "Verifies the add weight dialog accepts a valid weight and optional notes and confirms success.",
+    "category": "Weight Tracking",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "action",
+        "description": "Type \"72.5\" into the weight (kg) field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Felt strong today\" into the notes field"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "Submit a valid weight entry (minimal fields) and verify success",
+    "description": "Verifies a user can add a weight entry using only date and weight, and receives a success confirmation.",
+    "category": "Weight Tracking",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "action",
+        "description": "Select a date using the date picker"
+      },
+      {
+        "type": "action",
+        "description": "Type \"70\" into the weight (kg) field"
+      }
+    ]
+  },
+  {
+    "id": "TC025",
+    "title": "After successful add, confirm chart and table are visible for the updated dataset",
+    "description": "Verifies that after submitting an entry, the weight progression chart and the entries table are visible and usable for browsing.",
+    "category": "Weight Tracking",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "action",
+        "description": "Type \"71.2\" into the weight (kg) field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Submit\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC026",
+    "title": "Validation: reject non-numeric weight input",
+    "description": "Verifies the add weight dialog prevents submission and shows a validation message for non-numeric weight input.",
+    "category": "Weight Tracking",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "action",
+        "description": "Type \"abc\" into the weight (kg) field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Submit\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC027",
+    "title": "Validation: reject out-of-range weight input",
+    "description": "Verifies the add weight dialog prevents submission and shows a validation message for an unrealistic out-of-range weight value.",
+    "category": "Weight Tracking",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the floating action button (FAB) to add a weight entry"
+      },
+      {
+        "type": "action",
+        "description": "Type \"0\" into the weight (kg) field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Submit\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC028",
+    "title": "Browse the weight entries table for dates and notes visibility",
+    "description": "Verifies the weight entries table can be browsed and shows key columns like date, weight, and notes.",
+    "category": "Weight Tracking",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email or username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Weight Tracking\" in the main navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Weight Entries\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the weight entries table section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Date\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC029",
+    "title": "Coach dashboard loads with key overview sections and quick action to Program Management",
+    "description": "Verifies the coach can log in, view the main dashboard sections (statistics, session lists, tables), and use the quick action to reach Program Management.",
+    "category": "Coach Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Today's Sessions\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Program Management\" quick action button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/program-management\""
+      }
+    ]
+  },
+  {
+    "id": "TC030",
+    "title": "Coach dashboard displays statistics cards",
+    "description": "Verifies the statistics cards are visible and present the expected labels on the coach dashboard.",
+    "category": "Coach Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Active Members\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Completed Sessions\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Active Programs\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC031",
+    "title": "Coach can view today's sessions list with member names and times",
+    "description": "Verifies the dashboard shows the Today's Sessions section and includes recognizable session row content such as member and time.",
+    "category": "Coach Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Today's Sessions\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Today's Sessions list\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"A session row in Today's Sessions\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC032",
+    "title": "Coach can view upcoming sessions table on the dashboard",
+    "description": "Verifies the Upcoming Sessions table is visible and presented as a detailed table on the coach dashboard.",
+    "category": "Coach Dashboard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Upcoming Sessions\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Upcoming Sessions\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Upcoming Sessions table\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC033",
+    "title": "Coach can review member progress table with key columns",
+    "description": "Verifies the Member Progress section is visible and includes progress indicators such as session counts and weight change.",
+    "category": "Coach Dashboard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Member Progress\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Member Progress\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Member Progress table\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC034",
+    "title": "Coach can open a session from today's list and navigate to Manage Availability",
+    "description": "Verifies the coach can click a session row to view details and then navigate to Manage Availability to adjust slots.",
+    "category": "Coach Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the first visible session row in the \"Today's Sessions\" list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Session details panel or dialog\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Manage Availability\" link or button"
+      }
+    ]
+  },
+  {
+    "id": "TC035",
+    "title": "Manage Availability page loads after navigation from coach dashboard",
+    "description": "Verifies that after navigating toward Manage Availability, the coach lands on the manage availability route and sees the page content.",
+    "category": "Coach Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Manage Availability\" quick action button or navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/manage-availability\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Availability\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC036",
+    "title": "Create a new training program with full details and verify it appears in the program list",
+    "description": "Verifies a coach can create a complete program (member, title, guidance, nutrition, weekly plan, daily tasks) and see it in the list after saving.",
+    "category": "Program Management",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/program-management\""
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Create\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC037",
+    "title": "Complete program creation: select member, enter title, add guidance, nutrition, weekly plan, daily tasks, and save",
+    "description": "Verifies all major program fields can be filled and saved successfully in one end-to-end creation flow.",
+    "category": "Program Management",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Select a member from the member dropdown list"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Strength Rebuild Plan\" into the program title field"
+      }
+    ]
+  },
+  {
+    "id": "TC038",
+    "title": "Save a newly created program and verify it is visible in the list",
+    "description": "Verifies the save action persists the new program and the user can visually confirm it appears in the program list.",
+    "category": "Program Management",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Select a member from the member dropdown list"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Program A - QA\" into the program title field"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Save program\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Program A - QA\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC039",
+    "title": "Add and remove nutrition items before saving a new program",
+    "description": "Verifies the coach can add multiple nutrition items and remove an item in the program editor UI.",
+    "category": "Program Management",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Add a nutrition item"
+      },
+      {
+        "type": "action",
+        "description": "Add another nutrition item"
+      },
+      {
+        "type": "action",
+        "description": "Remove one nutrition item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Nutrition\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC040",
+    "title": "Configure a weekly plan by adding exercises for at least two different days",
+    "description": "Verifies the weekly plan section supports adding multiple exercises across multiple days in the same program draft.",
+    "category": "Program Management",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Configure the weekly plan for one day by adding two exercises"
+      },
+      {
+        "type": "action",
+        "description": "Configure the weekly plan for a different day by adding one exercise"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Weekly Plan\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC041",
+    "title": "Add multiple daily tasks to a program draft and verify tasks are shown in the editor",
+    "description": "Verifies the daily tasks section supports adding multiple tasks in the program editor UI.",
+    "category": "Program Management",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Add a daily task"
+      },
+      {
+        "type": "action",
+        "description": "Add another daily task"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Daily Tasks\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC042",
+    "title": "Validation: attempt to save a new program with missing required fields",
+    "description": "Verifies required-field validation prevents saving when member selection or title is missing and shows a visible error message.",
+    "category": "Program Management",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Program Management\" in the navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the FAB button to create a new program"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Save program\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"required\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC043",
+    "title": "Create a new availability slot using a preset time",
+    "description": "Verifies a coach can add a new availability slot with a preset time and see it listed as Available.",
+    "category": "Manage Availability",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Manage Availability\" in the main navigation/menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/manage-availability\""
+      },
+      {
+        "type": "action",
+        "description": "Click the add (FAB) button to add a new slot"
+      },
+      {
+        "type": "action",
+        "description": "Select a date using the date picker"
+      },
+      {
+        "type": "action",
+        "description": "Select a preset time from the time dropdown (between 08:00 and 18:00)"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Save\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Available\" is visible for the newly created slot"
+      }
+    ]
+  },
+  {
+    "id": "TC044",
+    "title": "Create a new availability slot using a custom time",
+    "description": "Verifies a coach can add a new availability slot using the custom time picker option.",
+    "category": "Manage Availability",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email/username field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" or \"Login\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/coach-dashboard\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Manage Availability\" in the main navigation/menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Manage Availability\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the add (FAB) button to add a new slot"
+      },
+      {
+        "type": "action",
+        "description": "Select a date using the date picker"
+      },
+      {
+        "type": "action",
+        "description": "Choose the custom time option to use the time picker"
+      },
+      {
+        "type": "action",
+        "description": "Select a custom time using the time picker"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Save\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new slot row/item is visible with booking status text \"Available\""
+      }
+    ]
+  }
+]

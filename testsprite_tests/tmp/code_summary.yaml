@@ -1,0 +1,233 @@
+version: "2"
+type: frontend
+tech_stack:
+  - TypeScript
+  - React 19
+  - Vite 7
+  - Material-UI (MUI)
+  - React Router
+  - Axios
+  - Recharts
+  - Day.js
+  - Express (backend)
+routes:
+  - path: /login
+    file: src/pages/Login.tsx
+    auth_required: false
+    description: User login page with test credentials for member and coach roles
+  - path: /
+    file: src/App.tsx
+    auth_required: false
+    description: Root route that redirects to dashboard based on user role or login
+  - path: /dashboard
+    file: src/pages/MemberDashboard.tsx
+    auth_required: true
+    description: Member dashboard showing upcoming sessions, program progress, weight tracking, and daily tasks
+  - path: /booking
+    file: src/pages/BookingSessions.tsx
+    auth_required: true
+    description: Member booking page to view available slots and book training sessions
+  - path: /programs
+    file: src/pages/TrainingPrograms.tsx
+    auth_required: true
+    description: Member training programs page showing personalized fitness and nutrition plan
+  - path: /weight-tracking
+    file: src/pages/WeightTracking.tsx
+    auth_required: true
+    description: Member weight tracking page with chart visualization and entry management
+  - path: /coach-dashboard
+    file: src/pages/CoachDashboard.tsx
+    auth_required: true
+    description: Coach dashboard showing today's sessions, member progress, and statistics
+  - path: /program-management
+    file: src/pages/ProgramManagement.tsx
+    auth_required: true
+    description: Coach program management page to create and edit training programs for members
+  - path: /manage-availability
+    file: src/pages/ManageAvailability.tsx
+    auth_required: true
+    description: Coach availability management page to create and manage available time slots
+features:
+  - name: User Login
+    description: Login with email and password credentials with separate flows for member and coach roles
+    files:
+      - src/pages/Login.tsx
+      - src/contexts/AuthContext.tsx
+    entry_route: /login
+    user_interactions:
+      - Fill email input field
+      - Fill password input field
+      - Click Login button to submit
+      - Click test login buttons to autofill credentials (member@gym.com or coach@gym.com)
+      - See error message on invalid credentials
+      - Redirect to appropriate dashboard on success
+    api_calls:
+      - method: POST
+        endpoint: /api/auth/login
+    auth_required: false
+  - name: Member Dashboard
+    description: View personalized dashboard with upcoming sessions, program progress, weight tracking stats, and daily tasks
+    files:
+      - src/pages/MemberDashboard.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /dashboard
+    user_interactions:
+      - View upcoming sessions with countdown timer
+      - See next session countdown details
+      - View training program progress percentage
+      - Check recent weight entries
+      - Toggle daily task completion checkboxes
+      - Click quick action buttons to navigate to other pages
+    api_calls:
+      - method: GET
+        endpoint: /api/sessions
+      - method: GET
+        endpoint: /api/programs
+      - method: GET
+        endpoint: /api/weight-entries
+      - method: PUT
+        endpoint: /api/programs/:id
+    auth_required: true
+  - name: Book Training Sessions
+    description: Browse available time slots and book training sessions with the coach
+    files:
+      - src/pages/BookingSessions.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /booking
+    user_interactions:
+      - View list of upcoming booked sessions
+      - Browse available time slots grouped by date
+      - Click Book Session button on an available slot
+      - Confirm booking in dialog
+      - Add optional notes for the session
+      - See success message after booking
+    api_calls:
+      - method: GET
+        endpoint: /api/sessions
+      - method: GET
+        endpoint: /api/available-slots
+      - method: POST
+        endpoint: /api/book-session
+    auth_required: true
+  - name: View Training Programs
+    description: View personalized training program including weekly exercises, nutrition plan, and daily tasks
+    files:
+      - src/pages/TrainingPrograms.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /programs
+    user_interactions:
+      - View program overview with title and creation date
+      - See daily tasks completion progress
+      - Switch between tabs (Daily Tasks, Weekly Plan, Nutrition)
+      - Toggle daily task completion checkboxes
+      - View weekly exercise plan organized by day
+      - Review nutrition guidelines and recommendations
+    api_calls:
+      - method: GET
+        endpoint: /api/programs
+      - method: PUT
+        endpoint: /api/programs/:id
+    auth_required: true
+  - name: Weight Tracking
+    description: Track and visualize weight progress over time with chart and table views
+    files:
+      - src/pages/WeightTracking.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /weight-tracking
+    user_interactions:
+      - View current weight and last update date
+      - See weight trend (gain/loss) from previous entry
+      - View total weight change since first entry
+      - Click FAB button to open add weight dialog
+      - Select date using date picker
+      - Enter weight value in kg
+      - Add optional notes
+      - Submit to add new weight entry
+      - View line chart showing weight progression
+      - Browse table of all weight entries with dates and notes
+    api_calls:
+      - method: GET
+        endpoint: /api/weight-entries
+      - method: POST
+        endpoint: /api/weight-entries
+    auth_required: true
+  - name: Coach Dashboard
+    description: View coach overview with statistics, today's sessions, upcoming sessions, and member progress
+    files:
+      - src/pages/CoachDashboard.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /coach-dashboard
+    user_interactions:
+      - View statistics cards (active members, completed sessions this week, active programs, today's sessions)
+      - See today's sessions list with member names and times
+      - View upcoming sessions in a detailed table
+      - Review member progress table with session counts and weight changes
+      - Navigate to other coach pages using quick action buttons
+    api_calls:
+      - method: GET
+        endpoint: /api/sessions
+      - method: GET
+        endpoint: /api/programs
+      - method: GET
+        endpoint: /api/weight-entries
+    auth_required: true
+  - name: Program Management
+    description: Create and edit personalized training programs for members including exercises, nutrition, and daily tasks
+    files:
+      - src/pages/ProgramManagement.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /program-management
+    user_interactions:
+      - View list of all existing programs
+      - Click FAB button to create new program
+      - Select member from dropdown list
+      - Enter program title
+      - Provide guidance text
+      - Add multiple nutrition items (add/remove fields)
+      - Configure weekly plan for each day with multiple exercises
+      - Add multiple daily tasks
+      - Save program
+      - Click edit button on existing program to modify
+      - View program details in expandable accordions
+    api_calls:
+      - method: GET
+        endpoint: /api/programs
+      - method: GET
+        endpoint: /api/sessions
+      - method: POST
+        endpoint: /api/programs
+      - method: PUT
+        endpoint: /api/programs/:id
+    auth_required: true
+  - name: Manage Availability
+    description: Create, edit, and delete available time slots for member bookings
+    files:
+      - src/pages/ManageAvailability.tsx
+      - src/contexts/DataContext.tsx
+    entry_route: /manage-availability
+    user_interactions:
+      - View all available slots grouped by date
+      - See booking status (Available or Booked) for each slot
+      - Click FAB button to add new slot
+      - Select date using date picker
+      - Choose between preset times or custom time
+      - Select preset time from dropdown (08:00-18:00)
+      - Or use time picker for custom time
+      - Save new slot
+      - Click edit button to modify existing slot
+      - Click delete button on available (unbooked) slots
+      - Confirm deletion in dialog
+      - See error if trying to delete booked slot
+    api_calls:
+      - method: GET
+        endpoint: /api/available-slots
+      - method: GET
+        endpoint: /api/sessions
+      - method: POST
+        endpoint: /api/available-slots
+      - method: PUT
+        endpoint: /api/available-slots/:id
+      - method: DELETE
+        endpoint: /api/available-slots/:id
+    auth_required: true
+known_limitations: []

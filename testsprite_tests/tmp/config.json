@@ -1,0 +1,20 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:4173",
+  "executionArgs": {
+    "projectName": "gym-web",
+    "projectPath": "/Users/zhangfangyuan/TestSprite/WebAppEval-bench/projects/gym-web",
+    "testIds": [],
+    "additionalInstruction": "",
+    "serverMode": "development",
+    "envs": {
+      "API_URL": "https://api.testsprite.com:11443/",
+      "API_KEY": "sk-user-wiMn2aVPWvIFeLEfwWFqjJxH6pO9FdfvK26avLM34FKRlFLWOfijpmsIntck8ToJ6JwljLUzQbEeaXdMjzd9nweYU3ia-JmmHiNYscrjorxg5ebSS_vMu6lrO4yYQedSmcA",
+      "TS_TUNNEL_ENDPOINT": "nlb-dev-9611f872753564b9.elb.us-east-1.amazonaws.com"
+    }
+  },
+  "serverPort": 51226,
+  "proxy": "http://2476dd09-dad8-4d5d-bbf0-3a6c6fe89f8a:b3egDLnuCDmFA8k4KaG1RvLDUxhtPzhZ@nlb-dev-9611f872753564b9.elb.us-east-1.amazonaws.com:8080"
+}
