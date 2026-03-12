@@ -14,7 +14,6 @@ A modern React TypeScript application for gym member and coach management with s
 - **Availability Management**: Set available time slots for booking
 
 ## Tech Stack
-
 - **React 18** with TypeScript
 - **Material-UI (MUI)** for modern, responsive design
 - **React Router** for navigation
