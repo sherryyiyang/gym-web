@@ -97,7 +97,6 @@ The frontend integrates with the Node.js backend API running on `http://localhos
 Make sure the backend server is running before using the application.
 
 ## Browser Support
-
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
