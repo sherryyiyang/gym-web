@@ -88,15 +88,12 @@ src/
 - Data persistence
 
 ## Development
-
 - Run `npm run dev` for development
 - Run `npm run build` for production build
 - Run `npm run preview` to preview production build
 
 ## Backend Integration
-
 The frontend integrates with the Node.js backend API running on `http://localhost:3001`.
-
 Make sure the backend server is running before using the application.
 
 ## Browser Support
