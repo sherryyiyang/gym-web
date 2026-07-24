@@ -1,8 +1,9 @@
 # Gym Web Frontend
 
 updated
-A modern React TypeScript application for gym member and coach management with session booking, training programs, and weight tracking.
+=======
 
+A modern React TypeScript application for gym member and coach management with session booking, training programs, and weight tracking.
 ## Features
 
 ### For Members
@@ -17,7 +18,6 @@ A modern React TypeScript application for gym member and coach management with s
 - **Availability Management**: Set available time slots for booking
 
 ## Tech Stack
-
 - **React 18** with TypeScript
 - **Material-UI (MUI)** for modern, responsive design
 - **React Router** for navigation
@@ -91,19 +91,15 @@ src/
 - Data persistence
 
 ## Development
-
 - Run `npm run dev` for development
 - Run `npm run build` for production build
 - Run `npm run preview` to preview production build
 
 ## Backend Integration
-
 The frontend integrates with the Node.js backend API running on `http://localhost:3001`.
-
 Make sure the backend server is running before using the application.
 
 ## Browser Support
-
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
