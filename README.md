@@ -1,5 +1,5 @@
 # Gym Web Frontend
-A modern React TypeScript application for gym member and coach management with session booking, training programs, and weight tracking.
+A modern React TypeScript application for gym member and coach management with session booking, training programs, and weight tracking. Good 
 ## Features
 
 ### For Members
